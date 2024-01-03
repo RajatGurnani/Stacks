@@ -34,13 +34,11 @@ public class Block : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        PlayerControl.DropBlock += StopMoving;
-    }
+    public void SetPosition(Vector3 position) => transform.position = position;
 
-    private void OnDisable()
-    {
-        PlayerControl.DropBlock -= StopMoving;
-    }
+    public void SetScale(Vector3 scale) => transform.localScale = scale;
+
+    private void OnEnable() => PlayerControl.DropBlock += StopMoving;
+
+    private void OnDisable() => PlayerControl.DropBlock -= StopMoving;
 }
