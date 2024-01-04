@@ -5,6 +5,7 @@ public class Calculator : MonoBehaviour
     public Block prevBlock;
     public Block currentBlock;
     public float tolerance = 0.1f;
+    public static event System.Action BlockPlaced;
 
     public void Start()
     {
@@ -35,6 +36,7 @@ public class Calculator : MonoBehaviour
                 prevBlock = currentBlock;
                 currentBlock = BlockSpawner.Instance.SpawnBlock(scale);
             }
+            BlockPlaced?.Invoke();
         }
     }
 

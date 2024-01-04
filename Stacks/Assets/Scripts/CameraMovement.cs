@@ -17,11 +17,11 @@ public class CameraMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerControl.DropBlock += Move;
+        Calculator.BlockPlaced += Move;
     }
 
     private void OnDisable()
     {
-        PlayerControl.DropBlock -= Move;
+        Calculator.BlockPlaced -= Move;
     }
 }
