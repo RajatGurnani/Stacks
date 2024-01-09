@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class GameManager : Singleton<GameManager>
 {
     /// <summary>
@@ -24,10 +20,6 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
         name = nameof(GameManager);
-    }
-
-    private void Start()
-    {
         playerData = SaveSystem.LoadPlayerData();
     }
 }

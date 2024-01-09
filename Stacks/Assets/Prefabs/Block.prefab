@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1874e9b38cff6d54990e544a9ab0b135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  extraBlockPrefab: {fileID: 4242674710536385338, guid: fdaf103a33baa4546924c87f3f066744, type: 3}
   moveSpeed: 1
   moveDirection: {x: 1, y: 0, z: 0}
   isMoving: 0

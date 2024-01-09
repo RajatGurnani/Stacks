@@ -31,10 +31,16 @@ public class Calculator : MonoBehaviour
             {
                 float newScale = scaleSum / 2 - Mathf.Abs(distance);
                 Vector3 scale = new Vector3(newScale, 1, 1);
-                currentBlock.transform.localScale = scale;
+
+                Vector3 dropboxScale = new Vector3(currentBlock.transform.localScale.x - newScale,1,1);
+                Vector3 dropPosition = new Vector3(prevBlock.transform.position.x - distance / 2 + prevBlock.transform.localScale.x * Mathf.Sign(distance), currentBlock.transform.position.y, currentBlock.transform.position.z);
                 currentBlock.transform.position = new Vector3(prevBlock.transform.position.x + distance / 2, currentBlock.transform.position.y, currentBlock.transform.position.z);
+                currentBlock.transform.localScale = scale;
                 prevBlock = currentBlock;
+                currentBlock.SpawnExtraBlock(dropPosition,dropboxScale);
+               // currentBlock.SpawnExtraBlock();
                 currentBlock = BlockSpawner.Instance.SpawnBlock(scale);
+               
             }
             BlockPlaced?.Invoke();
         }

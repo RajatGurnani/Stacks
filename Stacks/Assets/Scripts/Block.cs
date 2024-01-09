@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    public GameObject extraBlockPrefab;
     public float moveSpeed;
 
     public Vector3 moveDirection = Vector3.right;
@@ -41,4 +40,11 @@ public class Block : MonoBehaviour
     private void OnEnable() => PlayerControl.DropBlock += StopMoving;
 
     private void OnDisable() => PlayerControl.DropBlock -= StopMoving;
+
+    public void SpawnExtraBlock(Vector3 position, Vector3 scale)
+    {
+        GameObject tempBlock = Instantiate(extraBlockPrefab, position, Quaternion.identity);
+        tempBlock.transform.localScale = scale;
+        Destroy(tempBlock, 2f);
+    }
 }

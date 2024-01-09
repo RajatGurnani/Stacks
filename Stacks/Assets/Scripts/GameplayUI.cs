@@ -19,4 +19,14 @@ public class GameplayUI : MonoBehaviour
             scoreText.text = $"{scoreManager.score}";
         }
     }
+
+    private void OnEnable()
+    {
+        
+    }
+
+    private void OnDisable()
+    {
+        
+    }
 }
